@@ -60,11 +60,19 @@ There are **4 main types of session tracking** in Java:
 2. URLs can become long and complicated.
 3. URLs may be saved in browser history or shared with others, creating security risks.
 
+⚠️ Important Note
+
+Prefer cookie-based session tracking when possible, and avoid exposing session IDs in URLs.
+
 ---
 
 ## 4️⃣ Hidden Form Fields 📝
 
 **Definition:** Hidden form fields store information inside an HTML form using the `<input type="hidden">` element. This information is submitted to the server when the user submits the form.
+
+💻 Example
+
+<input type="hidden" name="userId" value="101">
 
 ### ✅ Advantages of Hidden Form Fields
 
@@ -78,6 +86,9 @@ There are **4 main types of session tracking** in Java:
 2. Users can view or modify hidden field values using browser developer tools.
 3. Cannot maintain session information automatically across all requests.
 
+⚠️ Important Note
+
+Never trust hidden form fields for authentication or authorization.
 ---
 
 ## 📊 Quick Comparison Table
@@ -92,8 +103,48 @@ There are **4 main types of session tracking** in Java:
 
 ---
 
-## 🎯 Interview Tip
+🎯 Interview Revision
 
-**Q: What are the types of session tracking in Java?**
+Q1. What is a Session and Session Tracking in Java Servlet?
 
-**Answer:** The four main types of session tracking in Java are Cookies, HttpSession, URL Rewriting, and Hidden Form Fields. They help maintain user information across multiple HTTP requests because HTTP is a stateless protocol.
+📌 Definition of Session
+
+A session is a mechanism used to maintain user-specific information across multiple HTTP requests.
+
+📌 Definition of Session Tracking
+
+Session tracking helps the server identify a user across multiple requests and associate those requests with the correct session.
+
+💡 Important Points
+
+HTTP is a stateless protocol, so the server does not automatically remember previous requests.
+
+Session tracking helps maintain user information across multiple HTTP requests.
+
+In Java Servlet, we commonly use the HttpSession interface to store and retrieve session attributes.
+
+The servlet container typically identifies a session using a session ID stored in a JSESSIONID cookie.
+
+The four commonly discussed session tracking mechanisms are Cookies, HttpSession, URL Rewriting, and Hidden Form Fields.
+
+🛒 Example
+
+In an e-commerce application, a session can maintain login-related information and shopping cart data while the user navigates between pages.
+
+Q2. Why is session tracking required in Java Servlet?
+
+Session tracking is required because HTTP is a stateless protocol and does not automatically remember previous requests.
+
+Q3. Which interface is commonly used for session management in Java Servlet?
+
+The HttpSession interface is commonly used to create, access, and manage session attributes.
+
+Q4. What are the four types of session tracking?
+
+Cookies
+
+HttpSession
+
+URL Rewriting
+
+Hidden Form Fields
