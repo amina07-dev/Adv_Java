@@ -70,9 +70,11 @@ Prefer cookie-based session tracking when possible, and avoid exposing session I
 
 **Definition:** Hidden form fields store information inside an HTML form using the `<input type="hidden">` element. This information is submitted to the server when the user submits the form.
 
-💻 Example
+### 💻 Example: Hidden Form Field
 
+```html
 <input type="hidden" name="userId" value="101">
+```
 
 ### ✅ Advantages of Hidden Form Fields
 
